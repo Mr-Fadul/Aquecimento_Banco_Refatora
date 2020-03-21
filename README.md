@@ -1,6 +1,6 @@
 # Aquecimento_Banco_Refatora
 
-Exercício de refatoração de banco de  dados sql 
+Exercício de refatoração Usando exemplo de código de banco simples.
 
 
 Faculdade UNA Contagem 2020
