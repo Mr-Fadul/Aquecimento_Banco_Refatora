@@ -9,20 +9,18 @@ public class TestandoBanco2 {
         int numConta=0;
         float numSaque=0;
         System.out.println("\n   *** Bem vindo ao Banco SI ***\n");
-        Scanner entrada = new Scanner(System.in);
-                
-        //while (entradaMenu != 6) {
-            System.out.println("====================================");
-            System.out.println("SI SI SI SI SI SI SI SI SI SI SI SI");
-            System.out.println("====================================\n");
-            System.out.println("Qual operação deseja efetuar?\n");
-            System.out.println("1 - Cadastrar Nova Conta\n2 - Consultar Conta\n3 - "
-                + "Depositar na Conta\n4 - Sacar da Conta\n5 - Listar Contas "
-                + "e Saldos\n6 - Sair\n");
-            System.out.print("Digite um número conforme o menu: "); 
-            entradaMenu = entrada.nextInt();
-            System.out.println("------------------------------------\n");
-           
+        Scanner entrada = new Scanner(System.in); 
+        System.out.println("====================================");
+        System.out.println("SI SI SI SI SI SI SI SI SI SI SI SI");
+        System.out.println("====================================\n");
+        System.out.println("Qual operação deseja efetuar?\n");
+        System.out.println("1 - Cadastrar Nova Conta\n2 - Consultar Conta\n3 - "
+            + "Depositar na Conta\n4 - Sacar da Conta\n5 - Listar Contas "
+            + "e Saldos\n6 - Sair\n");
+        System.out.print("Digite um número conforme o menu: "); 
+        entradaMenu = entrada.nextInt();
+        System.out.println("------------------------------------\n");
+        //vetor com 3 tipos de contas setadas e seus atributos básicos  
         Conta[] minhasContas = new Conta[3];
         minhasContas[0] = new ContaCorrente();
         minhasContas[1] = new ContaPoupanca();
