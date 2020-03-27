@@ -1,5 +1,6 @@
 package br.com.banco;
 import br.com.negocio.*;
+import com.sun.media.sound.EmergencySoundbank;
 import java.util.Scanner;
 import java.util.Random;
 
@@ -15,12 +16,17 @@ public class ContaCorrente extends Conta{
     public ContaCorrente(float depositoInicial){
         this.saldo += depositoInicial;
     }
-    
-    
+    // contrutor com conta
+//    public ContaCorrente(String[] dadosConta){
+//        this.saldo = toFloat(dadosConta['saldo']);
+//        this.numeroAgencia = dadosConta['agencia'].EmergencySoundbank.toFloat(doubles);
+//        this.numeroConta = dadosConta['conta'];
+//    }
+//    
     @Override // metodo depositar recebendo o saldo pelo Scanner
     public void depositar(float saldo){
         System.out.println("Informe o valor do deposito: ");
-        depositar(entrada.nextFloat());
+        deposito(entrada.nextFloat());    
     }
     
     @Override // metodo sacar recebendo e tratando o valor do saldo

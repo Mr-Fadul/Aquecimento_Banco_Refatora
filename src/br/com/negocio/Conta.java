@@ -12,18 +12,17 @@ public class Conta {
     
     /*************************************************************************/
     
-    public void depositar(float saldo){
+    public void deposito(float saldo){
         this.saldo += saldo;
     }
     
-    public boolean sacar(float valor){
-        if (valor > 0) {
-            return true;
-        }
-        else {
-            return false;
-        }
+    public void depositar(float saldo){
+        
     }
+    public boolean sacar(float valor){
+        return false;
+    }
+    
     
     public String toString(){
         return "\nAgência: "+numeroAgencia+"\nConta: "+numeroConta+"\nSaldo: "+saldo;

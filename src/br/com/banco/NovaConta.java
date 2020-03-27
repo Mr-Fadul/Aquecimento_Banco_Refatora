@@ -29,53 +29,46 @@ public class NovaConta extends Conta{
         }
         
         
-        if (this.opcaoConta == 1){
-            bancoContas[cont] = new ContaCorrente(); 
-            
-            if(bancoContas[cont] instanceof ContaCorrente) {
-            ContaCorrente contaCorrente = (ContaCorrente) bancoContas[cont]; //casting
-            contaCorrente.povoarCorrente();
-            }
-            
-            
-            povoar();
-            System.out.println("Conta Corrente criada.");
-            System.out.println(bancoContas[cont].toString());
-            cont++;
+        switch (this.opcaoConta) {
+            case 1:
+                bancoContas[cont] = new ContaCorrente();
+                if(bancoContas[cont] instanceof ContaCorrente) {
+                    ContaCorrente contaCorrente = (ContaCorrente) bancoContas[cont]; //casting
+                    contaCorrente.povoarCorrente();
+                }   povoar();
+                System.out.println("Conta Corrente criada.");
+                System.out.println(bancoContas[cont].toString());
+                cont++;
+                break;
+            case 2:
+                bancoContas[cont] = new ContaEspecial();
+                if(bancoContas[cont] instanceof ContaEspecial) {
+                    ContaEspecial contaEspecial = (ContaEspecial) bancoContas[cont]; //casting
+                    contaEspecial.povoarEspecial();
+                }   povoar();
+                System.out.println("\nConta Especial criada.");
+                System.out.println(bancoContas[cont].toString());
+                cont++;
+                break;
+            default:
+                bancoContas[cont] = new ContaPoupanca();
+                if(bancoContas[cont] instanceof ContaPoupanca) {
+                    ContaPoupanca contaPoupanca = (ContaPoupanca) bancoContas[cont]; //casting
+                    contaPoupanca.povoarPoupanca();
+                }   povoar();
+                System.out.println("Conta Poupança criada.");
+                System.out.println(bancoContas[cont].toString());
+                cont++;
+                break;
         }
-
-        else if (this.opcaoConta == 2){
-            bancoContas[cont] = new ContaEspecial();
-
-            if(bancoContas[cont] instanceof ContaEspecial) {
-            ContaEspecial contaEspecial = (ContaEspecial) bancoContas[cont]; //casting
-            contaEspecial.povoarEspecial();
-            }
-            
-            povoar();
-            System.out.println("\nConta Especial criada.");
-            System.out.println(bancoContas[cont].toString());
-            cont++;          
-        }
-        
-        else {
-            bancoContas[cont] = new ContaPoupanca();
-            
-            if(bancoContas[cont] instanceof ContaPoupanca) {
-            ContaPoupanca contaPoupanca = (ContaPoupanca) bancoContas[cont]; //casting
-            contaPoupanca.povoarPoupanca();
-            }
-            
-            povoar();
-            System.out.println("Conta Poupança criada.");
-            System.out.println(bancoContas[cont].toString());
-            cont++;
-        }
-
     }
     
     public void povoar(){
         bancoContas[cont].setNumeroAgencia(99);
         bancoContas[cont].setNumeroConta(1 + numero.nextInt(9999));
     } 
+    
+    public Conta voltaConta(int cont){
+        return bancoContas[cont];
+    }
 }
